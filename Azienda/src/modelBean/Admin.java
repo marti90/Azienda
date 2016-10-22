@@ -1,14 +1,20 @@
 package modelBean;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 
 @Entity
-public class Admin extends Utente{
+public class Admin extends Utente implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String livelloAccesso;
 	
 	public Admin(){
-		
+		super();
 	}
 
 	public Admin(String nome, String cognome, String username, String password, String livelloAccesso) {

@@ -1,15 +1,21 @@
 package modelBean;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 
 @Entity
-public class Cliente extends Utente{
+public class Cliente extends Utente implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String ragioneSociale;
 	private String pIva;
 	
 	public Cliente(){
-		
+		super();
 	}
 	
 	public Cliente(String nome, String cognome, String username, String password, String ragioneSociale, String pIva) {

@@ -6,32 +6,29 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <link rel="Stylesheet" type="text/css" href="css/stat.css">
 
-<title>Insert title here</title>
+<title>Home Page Admin</title>
 </head>
 <body>
 
 <div id="Container">
   
-  <div id="header">
-<h1>Header</h1>
-  
-  </div>
-  
-  
+    <div id="header">
+    <h1>Benvenuto nella tua HomePage!</h1>
+    </div>
+ 
     <div  class="menu">
- 
-  <jsp:include page="MenuLateraleAdmin.jsp"></jsp:include>
-  
-  </div>
+    <jsp:include page="MenuLateraleAdmin.jsp"></jsp:include>
+    </div>
+    
     <div id="content">
-   <h1>Welcom to Home Page </h1>
-  </div>
+    <h1>Welcome to Home Page </h1>
+    </div>
+    
     <div id="footer">
- <h1>Footer</h1>
- 
-  </div>
+    <h1>Footer</h1>
+    </div>
   
   
-  </div> <!--  end of container -->
+</div> <!--  end of container -->
 </body>
 </html>

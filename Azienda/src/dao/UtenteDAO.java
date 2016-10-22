@@ -108,7 +108,7 @@ public class UtenteDAO {
 			tx = session.getTransaction();
 			tx.begin();
 			
-			query = session.createQuery("from UtenteBean where username =:usernameInserito and password =:passwordInserita");
+			query = session.createQuery("from Utente where username =:usernameInserito and password =:passwordInserita");
 			query.setString("usernameInserito", username);
 			query.setString("passwordInserita", password);
 			u = (Utente) query.uniqueResult();
