@@ -1,5 +1,8 @@
 package modelBean;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Cliente extends Utente{
 	
 	private String ragioneSociale;

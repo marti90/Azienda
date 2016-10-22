@@ -1,7 +1,5 @@
 package dao;
 
-
-
 import utility.HibernateUtility;
 
 import org.hibernate.Query;

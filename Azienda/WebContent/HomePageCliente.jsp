@@ -10,9 +10,9 @@
 </head>
 <body>
 
-   <div id="Container">
+<div id="Container">
   
-     <div id="header">
+  <div id="header">
 <h1>Header</h1>
   
   </div>
@@ -20,11 +20,11 @@
   
     <div  class="menu">
  
-  <jsp:include page="menuLateraleDipendente.jsp"></jsp:include>
+  <jsp:include page="MenuLateraleCliente.jsp"></jsp:include>
   
   </div>
     <div id="content">
-   <h1>Welcom to Dipendente homePage </h1>
+   <h1>Welcom to Cliente homePage </h1>
   </div>
     <div id="footer">
  <h1>Footer</h1>
