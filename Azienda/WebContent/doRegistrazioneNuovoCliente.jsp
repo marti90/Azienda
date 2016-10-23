@@ -1,12 +1,38 @@
+<%@page import="service.Gestione"%>
+<%@page import="modelBean.Cliente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<jsp:useBean id="utente" class="modelBean.Utente" scope="session"></jsp:useBean>
+	 <jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
 
-</body>
-</html>
+    <%
+    String nome= request.getParameter("nome");
+    String cognome= request.getParameter("cognome");
+    String username= request.getParameter("username");
+    String password= request.getParameter("password");
+    String rg= request.getParameter("ragioneSociale");
+    String piva= request.getParameter("piva");
+    
+    Cliente c= new Cliente(nome,cognome,username,password,rg,piva);
+    c.setRuolo('C');
+    
+    Gestione g= new Gestione();
+    
+    if(g.getUtenteConUsername(username)==null) {
+    	
+    	password=g.convertiPass(password);
+    	c.setPassword(password);
+        g.registraCliente(c);
+        
+        %>
+    	<jsp:forward page="HomePageAdmin.jsp"/>
+    <%
+    }
+    else{
+    	error.setError("ATTENZIONE! i dati non sono validi!");
+        %>
+    	<jsp:forward page="RegistrazioneNuovoCliente.jsp"/>
+    <%
+    }
+    
+    %>

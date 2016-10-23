@@ -14,7 +14,7 @@
         
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        //password=g.convertiPass(password);
+        password=g.convertiPass(password);
         Utente u= g.getUtenteConUsername(username);
     
         if(g.esisteUtente(username, password))

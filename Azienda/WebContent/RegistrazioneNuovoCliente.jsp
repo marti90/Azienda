@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
   <link rel="Stylesheet" type="text/css" href="css/stat.css">
 
-<title>Insert title here</title>
+<title>Registrazione Cliente</title>
 </head>
 <body>
 
@@ -25,10 +25,16 @@
   </div>
     <div id="content">
    <h1>Registrazione Nuovo Cliente</h1>
-   <form action="" method="post">
+   <form action="doRegistrazioneNuovoCliente.jsp" method="post">
    
-   <input type="text" name="nome" required />
-   <input type="submit" value="Registra"  />
+   Nome : <input type="text" name="nome" /> <br>
+   Cognome : <input type="text" name="cognome"/> <br>
+   Username : <input type="text" name="username"/> <br>
+   Password : <input type="password" name="password"/> <br>
+   Ragione Sociale : <input type="text" name="ragioneSociale"/> <br>
+   Partita IVA : <input type="text" name="piva"/> <br>
+   <input type="submit" value ="Registra"/>
+   
    </form>
    
   </div>

@@ -2,13 +2,19 @@ package service;
 
 import java.util.List;
 
+import modelBean.Cliente;
+import modelBean.Dipendente;
 import modelBean.Utente;
+import dao.ClienteDAO;
+import dao.DipendenteDAO;
 import dao.UtenteDAO;
 import utility.PasswordCodification;
 
 public class Gestione {
 	
 private UtenteDAO uDao = new UtenteDAO();
+private ClienteDAO cDao = new ClienteDAO();
+private DipendenteDAO dDao = new DipendenteDAO();
 	
 	public boolean registraUtente(Utente u){
 		
@@ -46,5 +52,19 @@ private UtenteDAO uDao = new UtenteDAO();
 		
 		return PasswordCodification.codificatePass(pass);	
 	}
+    
+    public boolean registraCliente(Cliente c){
+    	boolean res = false;
+		res = cDao.createCliente(c);
+		
+		return res;
+    }
+    
+    public boolean registraDipendente(Dipendente d){
+    	boolean res = false;
+		res = dDao.createDipendente(d);
+		
+		return res;
+    }
 
 }
