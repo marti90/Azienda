@@ -15,10 +15,8 @@
     
     Gestione g= new Gestione();
     
-    if(utente.isValid() && g.getUtenteConUsername(dipendente.getPassword())==null) {
-    	
-    	String password=g.convertiPass(utente.getPassword());
-    	dipendente.setPassword(password);
+    if(dipendente.isValid() && g.getUtenteConUsername(dipendente.getPassword())==null) {
+    
         g.registraDipendente(dipendente);
         
         %>
@@ -28,7 +26,7 @@
     else{
     	error.setError("ATTENZIONE! i dati non sono validi!");
         %>
-    	<jsp:forward page="RegistrazioneNuovoCliente.jsp"/>
+    	<jsp:forward page="RegistrazioneNuovoDipendente.jsp"/>
     <%
     }
     

@@ -24,8 +24,8 @@
   
   </div>
     <div id="content">
-   <h1>Registrazione Nuovo Cliente</h1>
-   <form action="doRegistrazioneNuovoCliente.jsp" method="post">
+   <h1>Registrazione Nuovo Dipendente</h1>
+   <form action="doRegistrazioneNuovoDipendente.jsp" method="post">
    
    Nome : <input type="text" name="nome" /> <br>
    Cognome : <input type="text" name="cognome"/> <br>

@@ -24,7 +24,7 @@
   
   </div>
     <div id="content">
-   <h1>Welcom to Cliente homePage </h1>
+   <h1>Welcome to Cliente homePage </h1>
   </div>
     <div id="footer">
  <h1>Footer</h1>

@@ -11,19 +11,29 @@
    <title>Login Page</title>
    </head>
    <body>
-   <div id="content">
-   <h1>Login</h1>
+   <div id="Container">
+ 
+   <div id="header">
+    <h2>Effettua il Login per accedere alla tua HomePage!</h2>
+   </div>
    
+   <div id="content">
    <%=error.getError() %> 
    <form action="doLogin.jsp" method="post">
-   
+      <br>
+      <br>
       Username: <input type="text" name="username"/><br>
       Password: <input type="password" name="password"/><br>
       <input type= "hidden" name="call" value="2"/><br>
       <input type="submit" value="Accedi"/>
-
+      
    </form>
-
+   </div>
+   
+   <div id="footer">
+    <h1>Footer</h1>
+   </div>
+   
    </div>
 </body>
 </html>

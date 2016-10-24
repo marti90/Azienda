@@ -14,8 +14,7 @@
     String rg= request.getParameter("ragioneSociale");
     String piva= request.getParameter("piva");
     
-    Cliente c= new Cliente(nome,cognome,username,password,rg,piva);
-    c.setRuolo('C');
+    Cliente c= new Cliente(nome,cognome,username,'C',password,rg,piva);
     
     Gestione g= new Gestione();
     

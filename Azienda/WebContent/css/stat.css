@@ -1,16 +1,17 @@
 #Container{width:100%;
-           /* height:auto; */
-      border:1px solid blue;
-           background:#9BCD9B;
+           height:auto; 
+      border:1px #4d001f;
+           background:#ffffcc;
 	  margin: 0;
 	  padding:0;
 	 
 	  } 
 #header{  top:0;
          height:60px;
-        background-color:#F0FFF0;
+         color:#ffffcc;
+        background-color:#800033;
 		width:100%;
-            background:#F0FFF0;
+            background:#800033;
 		text-align:center;
 		
 		
@@ -23,7 +24,7 @@ p{
 .menu{
 	  width:30%;
 	  height:350px;
-	  background:#F0FFF0;
+	  background:#ffffcc;
 	  float:left;
 	  
 	  text-align:center;
@@ -36,8 +37,9 @@ p{
 	  
 /* 	     background-image: url('bgfootball.jpg'); */
 /* 	      background-size: 100%; */
-       background-color:#9BCD9B;
-	   float:left;
+       background-image: url('51651b.gif');
+       background-size: 100%;
+	   float:center;
 	   text-align:center;
 	   
 }
@@ -50,10 +52,11 @@ p{
 		
 
  #footer{
+        color:#ffffcc;
 	    height:60px;
 		text-align:center;
 		float:center;
-		background-color:#8FBC8F;
+		background-color:#800033;
 } 
 
 ul
