@@ -138,7 +138,8 @@ public class ClienteDAO {
 		        tx=session.getTransaction();
 		        tx.begin();
 		        
-		        Query query = session.createQuery("from UtenteBean");
+		        Query query = session.createQuery("from Utente where ruolo:=ruoloInserito");
+		        
 		        utenti= query.list();
 		        
 		        tx.commit(); 

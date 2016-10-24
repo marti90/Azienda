@@ -24,15 +24,10 @@ private DipendenteDAO dDao = new DipendenteDAO();
 		return res;
 	}
 	
-	public boolean esisteUtente(String username, String password){
-		
-		boolean res = false;
+	public Utente esisteUtente(String username, String password){
 		Utente u = uDao.readUtente(username, password);
-		if(u!=null){
-			res = true;
-		}
 		
-		return res;
+		return u;
 	}
 	
 	public Utente getUtenteConUsername(String username){
@@ -66,5 +61,10 @@ private DipendenteDAO dDao = new DipendenteDAO();
 		
 		return res;
     }
+    
+    public List<Cliente> getTuttiClienti(){
+		
+		return cDao.readClienti();
+	}
 
 }

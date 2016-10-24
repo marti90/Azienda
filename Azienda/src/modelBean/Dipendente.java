@@ -18,8 +18,8 @@ public class Dipendente extends Utente implements Serializable{
 		super();
 	}
 
-	public Dipendente(String nome, String cognome, String username, String password, double stipendio, String posizione) {
-		super(nome,cognome,username,password);
+	public Dipendente(String nome, String cognome, String username, char ruolo, String password, double stipendio, String posizione) {
+		super(nome,cognome,username,ruolo,password);
 		this.stipendio = stipendio;
 		this.posizione = posizione;
 	}

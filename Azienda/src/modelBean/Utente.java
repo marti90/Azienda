@@ -32,11 +32,12 @@ public class Utente implements Serializable{
 		
 	}
 	
-	public Utente(String nome, String cognome, String username,	String password) {
+	public Utente(String nome, String cognome, String username,	char ruolo, String password) {
 		
 		this.nome = nome;
 		this.cognome = cognome;
 		this.username = username;
+		this.ruolo = ruolo;
 		this.password = password;
 		
 	}
@@ -87,6 +88,20 @@ public class Utente implements Serializable{
 
 	public void setRuolo(char ruolo) {
 		this.ruolo = ruolo;
+	}
+	
+    public boolean isValid() {
+		
+		boolean res = false;
+		if((!nome.isEmpty() && nome != null) && 
+				(!cognome.isEmpty() && cognome !=null) &&
+				(!username.isEmpty() && username != null) && 
+				(!password.isEmpty() && password != null)){
+			
+			res = true;
+		}
+		
+		return res;
 	}
 
 }

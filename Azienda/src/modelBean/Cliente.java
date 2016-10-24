@@ -18,8 +18,8 @@ public class Cliente extends Utente implements Serializable{
 		super();
 	}
 	
-	public Cliente(String nome, String cognome, String username, String password, String ragioneSociale, String pIva) {
-		super(nome,cognome,username,password);
+	public Cliente(String nome, String cognome, String username, char ruolo, String password, String ragioneSociale, String pIva) {
+		super(nome,cognome,username,ruolo,password);
 		this.ragioneSociale = ragioneSociale;
 		this.pIva = pIva;
 	}

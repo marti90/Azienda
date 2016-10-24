@@ -17,8 +17,8 @@ public class Admin extends Utente implements Serializable{
 		super();
 	}
 
-	public Admin(String nome, String cognome, String username, String password, String livelloAccesso) {
-		super(nome,cognome,username,password);
+	public Admin(String nome, String cognome, String username, char ruolo, String password, String livelloAccesso) {
+		super(nome,cognome,username,ruolo,password);
 		this.setLivelloAccesso(livelloAccesso);
 	}
 

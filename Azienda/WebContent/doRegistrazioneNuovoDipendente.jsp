@@ -10,20 +10,15 @@
  
  <jsp:setProperty property="*" name="dipendente"/>   
 <%
-    //String nome= request.getParameter("nome");
-    //String cognome= request.getParameter("cognome");
-    //String username= request.getParameter("username");
-    //String password= request.getParameter("password");
-    //double stipendio= request.getParameter("stipendio");
-   // String posizione= request.getParameter("posizione");
-    
-    //Dipendente d= new Dipendente(nome,cognome,username,password,stipendio,posizione);
+   
     dipendente.setRuolo('D');
     
     Gestione g= new Gestione();
     
-    if(g.getUtenteConUsername(dipendente.getPassword())==null) {
+    if(utente.isValid() && g.getUtenteConUsername(dipendente.getPassword())==null) {
     	
+    	String password=g.convertiPass(utente.getPassword());
+    	dipendente.setPassword(password);
         g.registraDipendente(dipendente);
         
         %>

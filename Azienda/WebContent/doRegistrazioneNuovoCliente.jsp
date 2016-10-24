@@ -3,7 +3,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <jsp:useBean id="utente" class="modelBean.Utente" scope="session"></jsp:useBean>
-	 <jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
+<jsp:useBean id="error" class="utility.ErrorBean" scope="request"></jsp:useBean>
+<jsp:setProperty property="*" name="utente" />
 
     <%
     String nome= request.getParameter("nome");
@@ -18,7 +19,7 @@
     
     Gestione g= new Gestione();
     
-    if(g.getUtenteConUsername(username)==null) {
+    if(utente.isValid() && g.getUtenteConUsername(username)==null) {
     	
     	password=g.convertiPass(password);
     	c.setPassword(password);

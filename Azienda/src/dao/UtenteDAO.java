@@ -138,7 +138,7 @@ public class UtenteDAO {
 	        tx=session.getTransaction();
 	        tx.begin();
 	        
-	        Query query = session.createQuery("from UtenteBean");
+	        Query query = session.createQuery("from Utente");
 	        utenti= query.list();
 	        
 	        tx.commit(); 
