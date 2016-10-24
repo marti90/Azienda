@@ -1,8 +1,8 @@
 package modelRubrica;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
 
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -10,14 +10,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.Table;
+
+
+
 
 import org.hibernate.annotations.NotFound;
 import org.hibernate.annotations.NotFoundAction;
 
 
 @Entity
-@Table(name="RUBRICA")
 public class RubricaModel {
 	
 	private String nome="";
@@ -28,7 +29,7 @@ public class RubricaModel {
 	
 	@OneToMany(fetch=FetchType.EAGER,mappedBy="rubrica",cascade=CascadeType.ALL)
 	@NotFound(action=NotFoundAction.IGNORE)
-	private Set<VoceModel> listaVoci = new HashSet<VoceModel>();
+	private List<VoceModel> listaVoci = new ArrayList<VoceModel>();
 	
 	public RubricaModel(){
 		
@@ -56,11 +57,11 @@ public class RubricaModel {
 	}
 	
 
-	public Set<VoceModel> getListaVoci() {
+	public List<VoceModel> getListaVoci() {
 		return listaVoci;
 	}
 
-	public void setListaVoci(Set<VoceModel> listaVoci) {
+	public void setListaVoci(List<VoceModel> listaVoci) {
 		this.listaVoci = listaVoci;
 	}
 	

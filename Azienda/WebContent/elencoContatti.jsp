@@ -1,7 +1,12 @@
+<%@page import="modelRubrica.VoceModel"%>
+<%@page import="java.util.List"%>
+<%@page import="modelRubrica.RubricaModel"%>
 <%@page import="service.Gestione"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<jsp:useBean id="utente" class="modelBean.Utente" scope="request"></jsp:useBean>
 
 <div id="content">
 
@@ -20,21 +25,21 @@
 				</thead>
 
 				<%
-// 					Gestione g = new Gestione();
-// 					String usnm = cliente.getUsername();
-// 					Rubrica rbean = s.trovaRubrica(usnm);
-// 					List<Voce> lista = s.getVoci(rbean);
-// 					session.setAttribute("lista", lista);
+ 					Gestione g = new Gestione();   
+				    String username = utente.getUsername();
+ 					RubricaModel r = g.getRubricaConNome(username);
+ 					List<VoceModel> lista = g.getVociDiUnaRubrica(r);
+ 					
 				%>
 				<c:set var="i" value="1" scope="page" />
 
-				<c:forEach items="${lista}" var="u">
+				<c:forEach items="${lista}" var="ut">
 
 					<tr>
 						<td><c:out value="${i}" /></td>
-						<td><c:out value="${u.nomeVoce}" /></td>
-						<td><c:out value="${u.cognomeVoce}" /></td>
-						<td><c:out value="${u.telefono}" /></td>
+						<td><c:out value="${ut.nomeVoce}" /></td>
+						<td><c:out value="${ut.cognomeVoce}" /></td>
+						<td><c:out value="${ut.telefono}" /></td>
 					</tr>
 					<c:set var="i" value="${i + 1}" scope="page" />
 				</c:forEach>

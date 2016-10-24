@@ -1,11 +1,6 @@
 package dao;
 
-import java.util.Set;
-
-
-
-
-
+import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -116,7 +111,7 @@ public class VoceDAO {
 		return res;
 	}
 	
-	public Set<VoceModel> getVociPerUnaRubrica(long id_r){
+	public List<VoceModel> getVociPerUnaRubrica(String nome){
 		
 		
 		RubricaModel r = null;
@@ -127,7 +122,8 @@ public class VoceDAO {
 	        tx=session.getTransaction();
 	        tx.begin();
 	        
-	        Query query = session.createQuery("from RubricaModel where id_rubrica =: idInserito");
+	        Query query = session.createQuery("from RubricaModel where nome =:nomeInserito");
+	        query.setString("nomeInserito", nome);
 	        r = (RubricaModel) query.uniqueResult();
 	        
 	        tx.commit(); 

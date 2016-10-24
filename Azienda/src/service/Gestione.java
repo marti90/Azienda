@@ -5,9 +5,13 @@ import java.util.List;
 import modelBean.Cliente;
 import modelBean.Dipendente;
 import modelBean.Utente;
+import modelRubrica.RubricaModel;
+import modelRubrica.VoceModel;
 import dao.ClienteDAO;
 import dao.DipendenteDAO;
+import dao.RubricaDAO;
 import dao.UtenteDAO;
+import dao.VoceDAO;
 import utility.PasswordCodification;
 
 public class Gestione {
@@ -15,6 +19,8 @@ public class Gestione {
 private UtenteDAO uDao = new UtenteDAO();
 private ClienteDAO cDao = new ClienteDAO();
 private DipendenteDAO dDao = new DipendenteDAO();
+private RubricaDAO rDao= new RubricaDAO();
+private VoceDAO vDao= new VoceDAO();
 	
 	public boolean registraUtente(Utente u){
 		
@@ -66,5 +72,33 @@ private DipendenteDAO dDao = new DipendenteDAO();
 		
 		return cDao.readClienti();
 	}
+    
+    public RubricaModel getRubricaConNome(String nome){
+    	
+    	RubricaModel r = rDao.readRubricaConNome(nome);
+    	return r;
+    }
+    
+    public List<VoceModel> getVociDiUnaRubrica(RubricaModel r){
+    	
+    	List<VoceModel> listaVoci = vDao.getVociPerUnaRubrica(r.getNome());
+    	return listaVoci;
+    }
+    
+    public boolean registraVoce(VoceModel v, RubricaModel r) {
+		boolean res = false;
+		v.setRubrica(r);
+		r.addVoce(v);
+		boolean b= vDao.createVoce(v);
+
+		if(b==true)
+		{
+			res =true;
+		}
+		rDao.aggiornaRubrica(r);
+		return res;
+
+	}
+
 
 }

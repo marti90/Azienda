@@ -80,5 +80,18 @@ public class VoceModel {
 	public void setRubrica(RubricaModel rubrica) {
 		this.rubrica = rubrica;
 	}
+	
+public boolean isValid() {
+		
+		boolean res = false;
+		if((!nome.isEmpty() && nome != null) && 
+				(!cognome.isEmpty() && cognome !=null) &&
+				(!telefono.isEmpty() && telefono != null)){
+			
+			res = true;
+		}
+		
+		return res;
+	}
 
 }
